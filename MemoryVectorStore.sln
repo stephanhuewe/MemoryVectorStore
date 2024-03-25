@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryVectorStore", "Memory
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryVectorStore-sample", "MemoryVectorStore-sample\MemoryVectorStore-sample.csproj", "{549DCD31-D793-4E24-B4A6-28027DF63D39}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryVectorStore-sample-codebase-chat", "MemoryVectorStore-sample-codebase-chat\MemoryVectorStore-sample-codebase-chat.csproj", "{E7B31871-8534-49DA-9CCE-443FED0EA4C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{549DCD31-D793-4E24-B4A6-28027DF63D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{549DCD31-D793-4E24-B4A6-28027DF63D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{549DCD31-D793-4E24-B4A6-28027DF63D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B31871-8534-49DA-9CCE-443FED0EA4C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B31871-8534-49DA-9CCE-443FED0EA4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B31871-8534-49DA-9CCE-443FED0EA4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B31871-8534-49DA-9CCE-443FED0EA4C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

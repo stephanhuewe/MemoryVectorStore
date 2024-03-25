@@ -24,5 +24,10 @@
         {
             _textVector = vector.ConvertAll(new Converter<double, float>((d) => (float)d)).ToArray();
         }
+
+        public void SetVector(List<decimal> vector)
+        {
+            _textVector = vector.ConvertAll(new Converter<decimal, float>((d) => (float)d)).ToArray();
+        }
     }
 }

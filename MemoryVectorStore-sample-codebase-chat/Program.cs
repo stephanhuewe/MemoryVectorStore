@@ -3,6 +3,8 @@ using DataChunker;
 using System.Text;
 using Mistral.SDK.DTOs;
 using Mistral.SDK;
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 namespace MemoryVectorDB_sample
 {
@@ -15,12 +17,15 @@ namespace MemoryVectorDB_sample
             string OpenAIkey           = File.Exists("apikey.txt") ?File.ReadAllText("apikey.txt") :"";    // "API key here"; // OpenAI key
             string RepoURL = "";
             string gitPath = "C:\\temp\\gittest\\";                              // Code Base
-            
+
             //string queryString = $"Create unit tests for ChunkGenerator.cs"; // string to look for // WORKS
-            string queryString = $"Explain the functionality of ChunkGenerator.cs"; // string to look for
+            //string queryString = $"Explain the functionality of ChunkGenerator.cs"; // string to look for
+            //string queryString = $"Do a code review on ChunkGenerator"; // string to look for
 
+            Console.WriteLine("Welcome to ADC Code Chatbot, please enter your question.");
+            string queryString = Console.ReadLine();
 
-            Console.WriteLine("** Starting embedding demo");
+            Console.WriteLine("** Starting embedding code");
 
             var embeddingSample = new EmbeddingSample(OpenAIkey);
             // Create embedding, only needed once
@@ -39,7 +44,6 @@ namespace MemoryVectorDB_sample
                 }
                 else
                 {
-
                     await embeddingSample.WordEmbeddingAsync(file);
                     embeddingSample.SerializeDocumentText(file);
 
@@ -55,6 +59,15 @@ namespace MemoryVectorDB_sample
             await embeddingSample.FormulateAnswerAsync(queryString,findings);
 
             Console.WriteLine("** Done");
+            Console.WriteLine("Please enter 'r' for a new question. ");
+
+            string restart = Console.ReadLine();
+           
+            if (restart.ToUpper() == "R")
+            {                
+                System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                Environment.Exit(0);
+            }
         }
 
 
